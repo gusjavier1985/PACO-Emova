@@ -9,7 +9,8 @@ st.write("Consulta normativa técnica")
 
 Cargar base de datos
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
-db = FAISS.load_local("/content/drive/MyDrive/base_conocimiento_paco", embeddings, allow_dangerous_deserialization=True)
+Nota: Para que esto funcione en la nube, la carpeta 'base_conocimiento_paco' debe estar subida a este mismo repositorio
+db = FAISS.load_local("base_conocimiento_paco", embeddings, allow_dangerous_deserialization=True)
 
 Configurar IA
 llm = ChatGroq(api_key="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", model_name="llama-3.3-70b-versatile")
