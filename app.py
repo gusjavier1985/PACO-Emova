@@ -7,15 +7,15 @@ from langchain_groq import ChatGroq
 st.title("🤖 Asistente PACO - Línea B")
 st.write("Consulta normativa técnica")
 
-Cargar base de datos
+# Cargar base de datos
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 db = FAISS.load_local("/content/drive/MyDrive/base_conocimiento_paco", embeddings, allow_dangerous_deserialization=True)
 
-Configurar IA
+# Configurar IA
 llm = ChatGroq(api_key="TU_API_KEY_AQUI", model_name="llama-3.3-70b-versatile")
 qa = RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=db.as_retriever())
 
 pregunta = st.text_input("Tu consulta:")
 if pregunta:
-respuesta = qa.run(pregunta)
-st.write(respuesta)
+    respuesta = qa.run(pregunta)
+    st.write(respuesta)
