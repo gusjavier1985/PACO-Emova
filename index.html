@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal de Consulta Técnica - PACO Emova</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
+background-color: #f4f4f9;
+}
+h1 {
+color: #333;
+}
+</style>
+</head>
+<body>
+
+<h1>Bienvenido al Asistente de Consulta Técnica PACO</h1>
+<p>Haz clic en el icono de chat en la esquina inferior derecha para comenzar.</p>
+
+<script type="text/javascript">
+(function(d, t) {
+var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+v.onload = function() {
+window.voiceflow.chat.load({
+verify: { projectID: '6a43d2cd689828953d00ebe7' },
+url: 'https://general-runtime.voiceflow.com',
+voice: {
+url: "https://runtime-api.voiceflow.com"
+}
+});
+}
+v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+})(document, 'script');
+</script>
+
+</body>
+</html>
